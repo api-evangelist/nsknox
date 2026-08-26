@@ -1,0 +1,47 @@
+generated: '2026-08-26'
+method: searched
+source: >-
+  Registry searches against registry.npmjs.org, pypi.org, and the public GitHub API, plus
+  the nsKnox website (https://nsknox.net/) and its resources section.
+package_count: 0
+packages: []
+searched:
+- registry: npm
+  query: nsknox
+  endpoint: https://registry.npmjs.org/-/v1/search?text=nsknox
+  results: 0
+- registry: pypi
+  query: nsknox
+  endpoint: https://pypi.org/pypi/nsknox/json
+  status: 404
+  results: 0
+- registry: github
+  query: nsknox
+  endpoint: https://api.github.com/search/repositories?q=nsknox
+  results: 0
+github_organization:
+  url: https://github.com/nsKnox
+  api: https://api.github.com/orgs/nsKnox
+  name: nsKnox Technologies
+  public_repos:
+  - name: react-native-wkwebview
+    url: https://github.com/nsKnox/react-native-wkwebview
+    official: false
+    note: >-
+      Fork of a third-party React Native WebView component. Not an nsKnox client library.
+    version: null
+    published: null
+  - name: sockjs-client
+    url: https://github.com/nsKnox/sockjs-client
+    official: false
+    note: >-
+      Fork of the third-party SockJS JavaScript client. Not an nsKnox client library.
+    version: null
+    published: null
+note: >-
+  nsKnox publishes no first-party SDK or client library in any package registry checked.
+  The nsKnox GitHub organization exists and is public but contains only two forks of
+  unrelated third-party JavaScript projects, neither of which wraps an nsKnox API. The
+  company markets a "full ERP API integration" for SAP and Oracle, but the integration is
+  delivered through a customer engagement rather than through a published client library.
+  No `SDKs` pointer is emitted in apis.yml because there is no first-party SDK to point at.

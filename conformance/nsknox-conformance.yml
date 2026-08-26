@@ -1,0 +1,69 @@
+generated: '2026-08-26'
+method: searched
+source: >-
+  https://nsknox.net/technology/,
+  https://nsknox.net/payment-security-compliance-for-banks-and-corporate-clients/,
+  https://nsknox.net/adaptive-payment-security/, https://nsknox.net/privacy-policy/,
+  https://nsknox.net/terms-of-use/ — read for compliance, certification and standards claims.
+note: >-
+  nsKnox publishes no machine-readable contract, so nothing here is derived from a spec;
+  every entry below is read from the company's own public pages. No security certification
+  is published anywhere on nsknox.net — the words SOC 2, ISO 27001, ISO/IEC, PCI DSS,
+  FedRAMP, HIPAA and TISAX do not appear on the technology page, the compliance page, the
+  about page or the terms of use, and there is no trust center. NO Compliance pointer is
+  emitted in apis.yml as a result: a compliance-positioned company that publishes no
+  attestation is exactly the distinction that pointer is supposed to draw.
+conformance:
+- id: gdpr
+  conforms: true
+  evidence: >-
+    The privacy policy names the GDPR explicitly and assigns roles under it — nsKnox acts as
+    Processor and the Customer as Controller of supplier information.
+    https://nsknox.net/privacy-policy/
+- id: soc2
+  conforms: false
+  evidence: >-
+    No SOC 2 report, bridge letter, or trust center is published on nsknox.net. Absence of a
+    public claim; not evidence that no audit exists.
+- id: iso27001
+  conforms: false
+  evidence: >-
+    No ISO/IEC 27001 certificate or certification statement appears on any public nsknox.net
+    page. Absence of a public claim.
+- id: pcidss
+  conforms: false
+  evidence: >-
+    No PCI DSS claim. nsKnox validates bank-account ownership for B2B credit transfers; it is
+    not in the card-acceptance path, so PCI DSS is not expected to apply.
+- id: oauth2
+  conforms: false
+  evidence: >-
+    No OAuth 2.0 authorization server is published. /.well-known/oauth-authorization-server
+    and /.well-known/openid-configuration return 404 on nsknox.net and are WAF-intercepted on
+    pknox.nsknox.net.
+- id: oidc
+  conforms: true
+  evidence: >-
+    The customer portal's own public runtime config (https://verify.nsknox.net/appConfig.js)
+    lists `OidcSSO` and `SamlSSO` among the supported authentication methods for the
+    PaymentKnox "Knoxer" authentication services, alongside EmailPassword, GoogleSSO and
+    PhoneNumber. This is portal end-user single sign-on, not an API authorization surface.
+- id: rfc9457
+  conforms: false
+  evidence: No published contract or error reference to assert a problem-details format against.
+domain_standards:
+  note: >-
+    REWARD-ONLY and deliberately left unclaimed. The B2B payee-verification market does have
+    emerging domain standards — the EU Verification of Payee (VoP) scheme under the Instant
+    Payments Regulation, EPC VoP scheme rulebook message formats, ISO 20022 pain/pacs message
+    types, and Nacha account-validation rules in the US. nsKnox markets global bank-account
+    validation squarely in that market, but declares none of these standards in any published
+    contract, message shape, schema URN, or docs page that a machine can read. Recording an
+    unclaimed slot rather than inventing a conformance.
+  probed:
+  - id: eu-vop
+    declared: false
+  - id: iso20022
+    declared: false
+  - id: nacha-account-validation
+    declared: false

@@ -64,5 +64,29 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-nsKnox is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+nsKnox is an Israeli fintech-security company that protects business-to-business payments against
+fraud and misdirection for corporations and banks. Founded and led by Alon Cohen, founder and former
+CEO of CyberArk, nsKnox built its platform on a patented Cooperative Cyber Security (CCS)
+architecture in which payment and bank-account data is shredded and distributed across multiple
+independent "Knoxer" systems, so no single breach reveals anything. The PaymentKnox product line
+covers outgoing payments (accounts payable), incoming payments (accounts receivable), Bank Account
+Certificates, Master Data Guard, Payment Check, and an Adaptive Payment Security service that
+validates payee bank accounts worldwide through Quick Check in-network lookups and Knox Verify
+out-of-network mini-transactions against the banking system.
+
+- Website: https://nsknox.net/
+- Technology (Cooperative Cyber Security): https://nsknox.net/technology/
+- Support: https://nsknox.net/support/
+- Contact sales: https://nsknox.net/contact-us/
+- GitHub organization: https://github.com/nsKnox
+
+## API surface
+
+nsKnox markets API access — "a full ERP API integration" with SAP and Oracle, and "a secured portal,
+using files or an API" for banks and their corporate clients — but publishes **no developer portal,
+no API reference, and no machine-readable specification**. `https://nsknox.net/docs/` returns 403,
+the site's page sitemap contains no reference pages, and the PaymentKnox application host
+`pknox.nsknox.net` is intercepted by a WAF on every path. This profile therefore records a *gated*
+coverage state (`customer-only-docs`): the API exists and is sold, but the contract is only visible
+to onboarded tenants. Publishing the OpenAPI at a public URL would make this profile — and nsKnox's
+integration story — legible to buyers and agents alike.

@@ -1,17 +1,39 @@
 aid: nsknox
 name: nsKnox
-description: 'nsKnox is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  nsKnox is an Israeli fintech-security company that protects business-to-business payments
+  against fraud and misdirection for corporations and banks. Founded and led by Alon Cohen,
+  the founder and former CEO of CyberArk, nsKnox built its platform on a patented Cooperative
+  Cyber Security (CCS) architecture in which payment and bank-account data is shredded and
+  distributed across multiple independent "Knoxer" systems so that no single breach reveals
+  anything. Its PaymentKnox product line covers outgoing payments (accounts payable),
+  incoming payments (accounts receivable), Bank Account Certificates, Master Data Guard,
+  Payment Check, and an Adaptive Payment Security service that validates payee bank accounts
+  worldwide using Quick Check in-network lookups and Knox Verify out-of-network mini-transactions
+  against the banking system. Customers connect through a hosted portal, scheduled file transfer,
+  or a direct ERP API integration with systems such as SAP and Oracle. nsKnox publishes no public
+  developer portal, API reference, or machine-readable specification; the API surface is documented
+  to onboarded customers only.
 url: https://raw.githubusercontent.com/api-evangelist/nsknox/refs/heads/main/apis.yml
+image: https://nsknox.net/wp-content/uploads/2021/04/nsknox-newlogo-dark-1.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-26'
 modified: '2026-08-26'
 tags:
-- Company
+- Payments
+- Payment Fraud
+- Financial Services
+- Banking
+- Security
+- Fraud Prevention
+- Bank Account Validation
+- Accounts Payable
+- Accounts Receivable
+- Fintech
+- Compliance
+- Israel
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +41,76 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/nsknox-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://nsknox.net/
+- type: Technology
+  url: https://nsknox.net/technology/
+- type: Support
+  url: https://nsknox.net/support/
+- type: Blog
+  url: https://nsknox.net/blog/
+- type: BlogRSS
+  url: https://nsknox.net/feed/
+- type: News
+  url: https://nsknox.net/news/
+- type: Login
+  url: https://nsknox.net/login/
+- type: TermsOfService
+  url: https://nsknox.net/terms-of-use/
+- type: PrivacyPolicy
+  url: https://nsknox.net/privacy-policy/
+- type: GitHubOrganization
+  url: https://github.com/nsKnox
+- type: Partners
+  url: https://nsknox.net/partners/
+- type: About
+  url: https://nsknox.net/about/
+- type: Careers
+  url: https://nsknox.net/career/
+- type: ContactSales
+  url: https://nsknox.net/contact-us/
+- type: Twitter
+  url: https://twitter.com/nsKnoxTech
+- type: LinkedIn
+  url: https://www.linkedin.com/company/7972484/
+- type: LLMsTxt
+  url: llms/nsknox-llms.txt
+- type: Packages
+  url: packages/nsknox-packages.yml
+- type: Plans
+  url: plans/nsknox-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/nsknox-rate-limits.yml
+- type: Conformance
+  url: conformance/nsknox-conformance.yml
+- type: WellKnownProbe
+  url: well-known/nsknox-well-known.yml
+
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 8
+  pass: local-v1
+
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: >-
+    nsKnox markets "a full ERP API integration" for SAP and Oracle and an API interface into
+    the PaymentKnox platform, but ships no developer portal — https://nsknox.net/docs/ answers
+    403 Forbidden, the site's own Yoast page sitemap lists 79 public pages and not one is a
+    reference or spec, and every path on the PaymentKnox API host pknox.nsknox.net (read from
+    the customer portals' own Content-Security-Policy connect-src) is intercepted by a BIG-IP
+    WAF, so the contract is reachable only by an onboarded tenant.
+  evidence:
+  - url: https://nsknox.net/docs/
+    status: 403
+  - url: https://nsknox.net/openapi.json
+    status: 404
+  - url: https://pknox.nsknox.net/swagger.json
+    status: 200
+  - url: https://verify.nsknox.net/.well-known/agent-card.json
+    status: 404
+  checked: '2026-08-26'

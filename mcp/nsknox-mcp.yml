@@ -1,0 +1,24 @@
+generated: '2026-08-26'
+method: searched
+source: >-
+  Web search for an nsKnox MCP server, plus direct probes of nsknox.net,
+  accountvalidation.nsknox.net, verify.nsknox.net and pknox.nsknox.net for /mcp,
+  /.well-known/ai-plugin.json and an agent card.
+status: none
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: probed
+tools: []
+note: >-
+  nsKnox ships no hosted (remote) MCP server and no local-stdio MCP package. No candidate
+  tool list could be derived either: the company publishes no OpenAPI, no GraphQL schema and
+  no public API reference, so there are no operations to project into tools. nsKnox does
+  market an "AI Agent Caller" (https://nsknox.net/ai-agent-caller/) — an autonomous agent
+  that places vendor callback verification calls — but that is a product feature inside the
+  PaymentKnox application, not an agent-callable protocol surface, and it exposes no MCP or
+  A2A endpoint. NO MCPServer pointer is emitted in apis.yml; this file records a measured
+  absence.

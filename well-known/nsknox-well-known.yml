@@ -1,0 +1,120 @@
+generated: '2026-08-26'
+method: probed
+source: >-
+  Direct unauthenticated HTTP probes of every nsKnox host discovered in this pass:
+  the marketing site (nsknox.net), the two customer portals linked from
+  https://nsknox.net/login/ (accountvalidation.nsknox.net, verify.nsknox.net) and the
+  PaymentKnox API host named in those portals' own Content-Security-Policy connect-src
+  (pknox.nsknox.net).
+note: >-
+  Every probed /.well-known/ path missed. nsknox.net returns a real nginx 404 for all of
+  them. The two portals are Angular single-page apps whose origin answers every unknown
+  path with the SPA shell under an HTTP 404, so nothing there is a document. pknox.nsknox.net
+  sits behind a BIG-IP ASM WAF that answers every path — including /robots.txt — with an
+  HTTP 200 "Request Rejected" HTML page, so no status from that host can be read as a
+  document either. NO WellKnown or SecurityTxt pointer is emitted in apis.yml: this file
+  records a measured absence, not a served surface.
+hosts:
+- host: nsknox.net
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: accountvalidation.nsknox.net
+  note: Angular SPA origin; 404 body is the application shell, not a document.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: verify.nsknox.net
+  note: Angular SPA origin; 404 body is the application shell, not a document.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: pknox.nsknox.net
+  note: >-
+    BIG-IP ASM WAF answers every path with HTTP 200 and an HTML "Request Rejected" body.
+    The 200 is the WAF, not a document — treated as a miss.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+  - path: /.well-known/agent.json
+    status: 200
+    file: null

@@ -1,0 +1,17 @@
+generated: '2026-08-26'
+method: searched
+source: >-
+  https://nsknox.net/ — full page sitemap walk of https://nsknox.net/page-sitemap.xml
+  (79 pages, no pricing or plans page) plus https://nsknox.net/contact-sales/ and
+  https://nsknox.net/contact-us/.
+plan_count: 0
+plans: []
+pricing_model: contact-sales
+currency: null
+note: >-
+  nsKnox publishes no pricing page and no plan tiers. Its Yoast page sitemap lists every
+  public page on nsknox.net and contains no /pricing/ or /plans/ URL; every product page
+  (PaymentKnox for AP, PaymentKnox for AR, Bank Account Certificates, Master Data Guard,
+  Payment Check, Adaptive Payment Security) terminates in a "Contact Sales" or demo-request
+  form. This is an enterprise contact-sales motion aimed at corporate finance and bank
+  treasury buyers; the honest reading is plan_count 0, not undisclosed tiers.

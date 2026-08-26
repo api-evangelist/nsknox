@@ -1,0 +1,15 @@
+generated: '2026-08-26'
+method: searched
+source: >-
+  https://nsknox.net/ product and technology pages, plus probes of the PaymentKnox API host
+  pknox.nsknox.net for any documented or observable rate-limit headers.
+limit_count: 0
+rate_limits: []
+headers: []
+status_code_on_exhaustion: null
+note: >-
+  No rate limits are published. nsKnox has no developer portal or API reference in which
+  limits could be stated, and no runtime limit signal could be observed either: every path
+  on the PaymentKnox API host pknox.nsknox.net is intercepted by a BIG-IP ASM WAF that
+  returns an HTML "Request Rejected" page carrying no RateLimit-*, X-RateLimit-* or
+  Retry-After headers. An honest zero, not an omission.
