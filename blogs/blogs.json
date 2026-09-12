@@ -2,6 +2,13 @@
   "repo": "nsknox",
   "feeds": [
     {
+      "source": "https://nsknox.net/blog/",
+      "feed_url": "https://nsknox.net/blog/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    },
+    {
       "source": "https://nsknox.net/support/",
       "feed_url": "https://nsknox.net/feed/",
       "title": "",
@@ -9,13 +16,13 @@
       "method": "discovered"
     },
     {
-      "source": "https://nsknox.net/blog/",
+      "source": "https://nsknox.net/feed/",
       "feed_url": "https://nsknox.net/feed/",
       "title": "",
       "saved": 0,
-      "method": "discovered"
+      "method": "feed"
     }
   ],
-  "post_count": 0,
-  "fetched": "2026-08-30T22:33:40Z"
+  "post_count": 10,
+  "fetched": "2026-09-06T19:17:18Z"
 }
