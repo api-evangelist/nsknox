@@ -48,7 +48,7 @@ modified: '2026-08-26'
 tags:
 - Payments
 - Payment Fraud
-- Financial-Services
+- Financial Services
 - Banking
 - Security
 - Fraud Prevention
@@ -71,6 +71,7 @@ tags_raw:
 - Fintech
 - Compliance
 - Israel
+- Financial-Services
 apis: []
 maintainers:
 - FN: Kin Lane
